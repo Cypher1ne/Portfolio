@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soumitra – Cybersecurity Portfolio</title>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Motion equivalents for framer-motion */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-scale {
+      opacity: 0;
+      transform: scale(.95);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade-scale.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Utility to emulate backdrop blur support selector */
+    @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+      .supports-\[backdrop-filter\]\:bg-neutral-950\/40 {
+        background-color: rgba(10, 10, 10, 0.6);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-neutral-950 text-neutral-200 selection:bg-cyan-500/30 selection:text-white">
+
+  <!-- Background (same decorative gradients) -->
+  <div aria-hidden class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-200px,rgba(56,189,248,0.15),transparent),radial-gradient(800px_400px_at_80%_10%,rgba(168,85,247,0.15),transparent),radial-gradient(700px_500px_at_20%_10%,rgba(34,197,94,0.15),transparent)]"></div>
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full blur-3xl opacity-20 bg-gradient-to-br from-cyan-400/30 via-purple-500/30 to-emerald-400/30"></div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/40 bg-neutral-950/60 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="text-white font-semibold tracking-tight">
+        Soumitra<span class="text-cyan-400">.security</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm text-neutral-300">
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#experience" class="hover:text-white">Experience</a>
+        <a href="#certs" class="hover:text-white">Certifications</a>
+        <a href="#blog" class="hover:text-white">Blog</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#" class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-white/10 hover:bg-white/20 text-white border border-white/10 transition">
+          <i data-lucide="file-down" class="w-4 h-4"></i> Resume
+        </a>
+        <a href="https://github.com/yourhandle" target="_blank" rel="noreferrer" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10">
+          <i data-lucide="github" class="w-4 h-4 text-white"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourhandle/" target="_blank" rel="noreferrer" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10">
+          <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
+        </a>
+        <a href="#contact" class="p-2 rounded-xl bg-cyan-500/90 hover:bg-cyan-400 text-neutral-950 font-medium">Hire me</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="relative max-w-6xl mx-auto px-6 sm:px-8 pt-20 pb-24">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="fade-up">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">
+          <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+          Available for VAPT & Web App Security
+        </div>
+        <h1 class="mt-5 text-4xl sm:text-6xl font-semibold tracking-[-0.03em] text-white">Soumitra Patra</h1>
+        <p class="mt-3 text-xl text-neutral-300">Cybersecurity Analyst • Ethical Hacker</p>
+        <p class="mt-4 max-w-xl leading-relaxed text-neutral-300">
+          Breaking systems to make them safer. Web app security • VAPT • Bug bounty • Threat modeling.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#" class="inline-flex items-center gap-2 rounded-2xl px-5 py-3 bg-white text-neutral-950 font-semibold hover:bg-neutral-200 transition">
+            <i data-lucide="file-down" class="w-4 h-4"></i> Download Resume
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-2xl px-5 py-3 border border-white/15 bg-white/5 hover:bg-white/10 text-white">
+            <i data-lucide="mail" class="w-4 h-4"></i> Contact Me
+          </a>
+        </div>
+        <div class="mt-6 flex items-center gap-4 text-sm text-neutral-400">
+          <div class="inline-flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> New Delhi, India
+          </div>
+          <div class="inline-flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i> +91-9XXXXXXXXX
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-scale">
+        <div class="p-8 relative overflow-hidden rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur">
+          <div class="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-gradient-to-tr from-cyan-500/20 via-purple-500/20 to-emerald-500/20 blur-2xl"></div>
+          <div class="flex items-center gap-4">
+            <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-purple-500/30 border border-white/10 flex items-center justify-center">
+              <i data-lucide="terminal" class="w-7 h-7 text-white"></i>
+            </div>
+            <div>
+              <p class="text-neutral-300">Currently hacking on</p>
+              <p class="text-white font-medium">Daily TryHackMe • Bug bounty prep</p>
+            </div>
+          </div>
+          <div class="mt-6 grid grid-cols-3 gap-4">
+            <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center text-neutral-200">Recon</div>
+            <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center text-neutral-200">Exploitation</div>
+            <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center text-neutral-200">Reporting</div>
+          </div>
+          <div class="mt-6 flex items-center gap-2 text-neutral-300 text-sm">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+            <span>Dark theme • Subtle 3D glow • Smooth motion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="relative max-w-6xl mx-auto px-6 sm:px-8 py-20">
+    <div class="mb-10 fade-up">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-white">About</h2>
+      <p class="mt-3 text-neutral-300 max-w-2xl leading-relaxed">Short, recruiter-friendly summary</p>
+    </div>
+    <div class="p-8 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+      <p class="leading-relaxed text-neutral-300">
+        I'm a cybersecurity analyst focused on <span class="text-white font-medium">web application security and VAPT</span>.
+        I care about <span class="text-white font-medium">reproducible methodology</span>, clean writeups, and practical fixes that reduce real-world risk. Right now, I’m publishing daily TryHackMe walkthroughs, building automation to speed up recon and triage, and preparing for <span class="text-white font-medium">eJPT</span>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="relative max-w-6xl mx-auto px-6 sm:px-8 py-20">
+    <div class="mb-10 fade-up">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-white">Skills &amp; Tools</h2>
+      <p class="mt-3 text-neutral-300 max-w-2xl leading-relaxed">A quick snapshot of my core capabilities</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Offensive Security -->
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white font-medium mb-3">Offensive Security</h3>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-neutral-300">VAPT</span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-neutral-300">Web App Hacking</span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-neutral-300">OWASP Top 10</span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-neutral-300">Burp Suite</span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-neutral-300">Metasploit</span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-neutral-300">Hydra</span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-neutral-300">John the Ripper</span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-neutral-300">Hashcat</span>
+        </div>
+      </div>
+
+      <!-- Recon & Enumeration -->
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white font-medium mb-3">Recon &amp; Enumeration</h3>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="badge">Nmap</span><span class="badge">Amass</span><span class="badge">Subfinder</span>
+          <span class="badge">FFUF</span><span class="badge">Dirsearch</span><span class="badge">ZAP</span><span class="badge">Gobuster</span>
+        </div>
+      </div>
+
+      <!-- Scripting & Automation -->
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white font-medium mb-3">Scripting &amp; Automation</h3>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="badge">Python</span><span class="badge">Bash</span><span class="badge">Node.js</span>
+          <span class="badge">Regex</span><span class="badge">Automation Pipelines</span>
+        </div>
+      </div>
+
+      <!-- Cloud & Platforms -->
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white font-medium mb-3">Cloud &amp; Platforms</h3>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="badge">AWS Basics</span><span class="badge">Linux</span><span class="badge">Docker</span>
+          <span class="badge">Git/GitHub</span><span class="badge">CI/CD</span><span class="badge">Notion</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="relative max-w-6xl mx-auto px-6 sm:px-8 py-20">
+    <div class="mb-10 fade-up">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-white">Projects</h2>
+      <p class="mt-3 text-neutral-300 max-w-2xl leading-relaxed">Select work with impact and documentation</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Project Cards -->
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white text-lg font-medium">Professional Vulnerability Scanning Suite</h3>
+        <p class="mt-2 text-neutral-300 text-sm leading-relaxed">
+          End-to-end scanning workflow using Nmap → OpenVAS/Nessus → reporting. Includes pivoting and internal network scans.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+          <span class="badge">Nmap</span><span class="badge">OpenVAS</span><span class="badge">Nessus</span><span class="badge">Python</span>
+        </div>
+        <div class="mt-5">
+          <a href="#" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm">
+            View details <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white text-lg font-medium">CTF &amp; TryHackMe Writeups (Daily)</h3>
+        <p class="mt-2 text-neutral-300 text-sm leading-relaxed">
+          Beginner-friendly writeups tailored for Indian audiences with step-by-step methodology and tooling logs.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+          <span class="badge">TryHackMe</span><span class="badge">Kali</span><span class="badge">Burp</span><span class="badge">Markdown</span>
+        </div>
+        <div class="mt-5">
+          <a href="#" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm">
+            View details <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white text-lg font-medium">I Hacked My Own Wi-Fi — Case Study</h3>
+        <p class="mt-2 text-neutral-300 text-sm leading-relaxed">
+          Legal, controlled assessment of a home network with lessons on threat modeling and defense-in-depth.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+          <span class="badge">Aircrack-ng</span><span class="badge">Wireshark</span><span class="badge">Kali</span>
+        </div>
+        <div class="mt-5">
+          <a href="#" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm">
+            View details <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white text-lg font-medium">Web App Bug Hunting Toolkit</h3>
+        <p class="mt-2 text-neutral-300 text-sm leading-relaxed">
+          Custom scripts for parameter mining, wordlist generation, and passive recon to accelerate triage.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+          <span class="badge">Python</span><span class="badge">Bash</span><span class="badge">FFUF</span><span class="badge">Subfinder</span>
+        </div>
+        <div class="mt-5">
+          <a href="#" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm">
+            View details <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="relative max-w-6xl mx-auto px-6 sm:px-8 py-20">
+    <div class="mb-10 fade-up">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-white">Experience</h2>
+      <p class="mt-3 text-neutral-300 max-w-2xl leading-relaxed">What I’ve shipped and where I’ve learned</p>
+    </div>
+
+    <div class="grid gap-6">
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white font-medium">Freelance VAPT / Security Researcher • <span class="text-neutral-300">Independent</span></h3>
+        <p class="text-sm text-neutral-400 mt-1">2024 — Present</p>
+        <ul class="mt-4 space-y-2 text-neutral-300">
+          <li class="flex gap-2"><span class="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-cyan-400"></span> Performed web application assessments with reproducible PoCs and mitigation guidance.</li>
+          <li class="flex gap-2"><span class="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-cyan-400"></span> Automated recon and discovery to reduce manual triage time by 40%.</li>
+          <li class="flex gap-2"><span class="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-cyan-400"></span> Delivered executive and technical reports mapping issues to OWASP/WSTG.</li>
+        </ul>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <h3 class="text-white font-medium">B.C.A. Student • <span class="text-neutral-300">IITM Janakpuri, GGSIPU</span></h3>
+        <p class="text-sm text-neutral-400 mt-1">2022 — 2025</p>
+        <ul class="mt-4 space-y-2 text-neutral-300">
+          <li class="flex gap-2"><span class="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-cyan-400"></span> Focused on cybersecurity fundamentals, networks, and operating systems.</li>
+          <li class="flex gap-2"><span class="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-cyan-400"></span> Built a consistent public learning trail: blogs, labs, and community contributions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certs" class="relative max-w-6xl mx-auto px-6 sm:px-8 py-20">
+    <div class="mb-10 fade-up">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-white">Certifications</h2>
+      <p class="mt-3 text-neutral-300 max-w-2xl leading-relaxed">Proof of skills and ongoing learning</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <div class="flex items-center gap-3">
+          <i data-lucide="award" class="w-5 h-5 text-white"></i>
+          <h3 class="text-white font-medium">eJPT (INE)</h3>
+        </div>
+        <p class="mt-2 text-neutral-300"><span class="text-white">Status:</span> Preparing</p>
+        <p class="text-neutral-400 text-sm">Hands-on junior penetration tester exam</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <div class="flex items-center gap-3">
+          <i data-lucide="award" class="w-5 h-5 text-white"></i>
+          <h3 class="text-white font-medium">TryHackMe Badges</h3>
+        </div>
+        <p class="mt-2 text-neutral-300"><span class="text-white">Status:</span> Ongoing</p>
+        <p class="text-neutral-400 text-sm">Daily room completions and streaks</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="relative max-w-6xl mx-auto px-6 sm:px-8 py-20">
+    <div class="mb-10 fade-up">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-white">Blog &amp; Articles</h2>
+      <p class="mt-3 text-neutral-300 max-w-2xl leading-relaxed">Case studies, walkthroughs, and notes</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <div class="flex items-center gap-3">
+          <i data-lucide="rss" class="w-5 h-5 text-white"></i>
+          <div>
+            <h3 class="text-white font-medium">The Story of Me: From Zero to a Cybersecurity Obsession</h3>
+            <p class="text-neutral-400 text-sm">May 30, 2025</p>
+          </div>
+        </div>
+        <div class="mt-4">
+          <a href="#" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm">
+            Read post <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+        <div class="flex items-center gap-3">
+          <i data-lucide="rss" class="w-5 h-5 text-white"></i>
+          <div>
+            <h3 class="text-white font-medium">Daily TryHackMe Walkthrough — Method over Magic</h3>
+            <p class="text-neutral-400 text-sm">June 1, 2025</p>
+          </div>
+        </div>
+        <div class="mt-4">
+          <a href="#" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 text-sm">
+            Read post <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="relative max-w-6xl mx-auto px-6 sm:px-8 py-20">
+    <div class="mb-10 fade-up">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-white">Contact</h2>
+      <p class="mt-3 text-neutral-300 max-w-2xl leading-relaxed">Let’s work together on something secure &amp; outstanding</p>
+    </div>
+
+    <div class="p-6 rounded-2xl bg-neutral-900/60 border border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.4)] backdrop-blur fade-up">
+      <div class="grid md:grid-cols-5 gap-6">
+        <div class="md:col-span-3">
+          <form onsubmit="event.preventDefault()" class="grid grid-cols-1 gap-4">
+            <input class="w-full rounded-xl bg-neutral-900/70 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" placeholder="Your name" />
+            <input class="w-full rounded-xl bg-neutral-900/70 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" placeholder="Email address" />
+            <textarea rows="5" class="w-full rounded-xl bg-neutral-900/70 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" placeholder="Tell me about your project or security needs"></textarea>
+            <button class="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-cyan-500 text-neutral-950 font-semibold hover:bg-cyan-400 transition" type="submit">
+              Send message
+            </button>
+          </form>
+        </div>
+        <div class="md:col-span-2">
+          <div class="space-y-4">
+            <a href="mailto:your.email@example.com" class="flex items-center gap-3 text-neutral-300 hover:text-white">
+              <i data-lucide="mail" class="w-4 h-4"></i> your.email@example.com
+            </a>
+            <a href="https://www.linkedin.com/in/yourhandle/" class="flex items-center gap-3 text-neutral-300 hover:text-white">
+              <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+            </a>
+            <a href="https://github.com/yourhandle" class="flex items-center gap-3 text-neutral-300 hover:text-white">
+              <i data-lucide="github" class="w-4 h-4"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 py-10 text-sm text-neutral-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Soumitra Patra. All rights reserved.</p>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/yourhandle" class="hover:text-white"><i data-lucide="github" class="w-4 h-4"></i></a>
+        <a href="https://www.linkedin.com/in/yourhandle/" class="hover:text-white"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+        <a href="mailto:your.email@example.com" class="hover:text-white"><i data-lucide="mail" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Replace icon placeholders with SVGs
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide && lucide.createIcons) {
+        lucide.createIcons();
+      }
+      // Year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Reveal-on-scroll (mimics whileInView + initial)
+      const els = document.querySelectorAll('.fade-up, .fade-scale');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('show');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      els.forEach(el => io.observe(el));
+    });
+  </script>
+
+  <!-- Tiny helper for badge style (keeps HTML clean) -->
+  <script>
+    // Add .badge classes via JS so we don't repeat long Tailwind strings everywhere (optional)
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.badge').forEach(el => {
+        el.className = 'badge text-[11px] rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-neutral-300';
+      });
+    });
+  </script>
+</body>
+</html>
